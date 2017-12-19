@@ -1,0 +1,25 @@
+
+
+
+.container{
+	margin-top: 170px;
+}
+
+
+#score{
+background: blue;
+height: 50px;
+}
+
+
+
+
+
+#wrongAnswer{
+
+background:red;
+height:20px;
+}
+button{
+	width: 50%;
+}

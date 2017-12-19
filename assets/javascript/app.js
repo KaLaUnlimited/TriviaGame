@@ -9,6 +9,7 @@ $(".question2").hide();
 $(".question3").hide();
 $(".question4").hide();
 $("#score").hide();
+$("#wrongAnswer").hide();
 
 
 
@@ -40,11 +41,15 @@ function q1countDown(){
 			//countdown begins to answer question #3
 			var hide3=setTimeout(q3countDown,6000);
 				function q3countDown(){
+					number =6;
+					timer();
 					$(".question3").hide();
 					$(".question4").show();
 					//countdown begins to answer question #4
 					var hide3=setTimeout(q4countDown,6000);
 						function q4countDown(){
+							number =6;
+							timer();
 							$(".question4").hide();
 							//code to display code
 								$("#score").show();
