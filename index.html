@@ -2,17 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>Hello, world!</title>
+    <title>Trivia Game</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+  <header><h1 class="sparkle">Happy New Year!!</h1> </header>  
     <div class="container text-center">
         <!-- row- -->
         <div class="row">
@@ -27,10 +28,10 @@
                 <!-- Timer goes here --> </h1>
                 <h2>Question 1</h2>
                 <!-- button -->
-                <button id="buttonOne" class="btn game citrineImg" style="background:red">Option</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:orange">Option 2</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:yellow">Option 3</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:green">Option 4</button>
+                <button id="buttonOne" class="btn game right" style="background:red">Option</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:orange">Option 2</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:yellow">Option 3</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:green">Option 4</button>
                 
             </div>
         </div>
@@ -41,10 +42,10 @@
                 Timer goes here </h1>
                 <h2>Question 2</h2>
                 <!-- buttons -->
-             	 <button id="buttonOne" class="btn game citrineImg" style="background:red">Option</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:orange">Option 2</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:yellow">Option 3</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:green">Option 4</button>
+             	 <button id="buttonOne" class="btn game right" style="background:red">Option</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:orange">Option 2</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:yellow">Option 3</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:green">Option 4</button>
 
             </div>
         </div>
@@ -55,10 +56,10 @@
                 <!-- Timer goes here --> </h1>
                 <h2>Question 3 </h2>
                 <!-- buttons -->
-                <button id="buttonOne" class="btn game citrineImg"  style="background:red">Option1</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:orange">Option 2</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:yellow">Option 3</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:green">Option 4</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:red">Option1</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:orange">Option 2</button>
+                <button id="buttonOne" class="btn game right"  style="background:yellow">Option 3</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:green">Option 4</button>
             </div>
         </div>
         <!-- row- -->
@@ -68,10 +69,10 @@
                 Timer goes here </h1>
                 <h2>Question 4</h2>
                 <!-- buttons -->
-               <button id="buttonOne" class="btn game citrineImg" style="background:red">Option</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:orange">Option 2</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:yellow">Option 3</button>
-                <button id="buttonOne" class="btn game citrineImg"  style="background:green">Option 4</button>
+               <button id="buttonOne" class="btn game wrongAnswer" style="background:red">Option</button>
+                <button id="buttonOne" class="btn game right"  style="background:orange">Option 2</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:yellow">Option 3</button>
+                <button id="buttonOne" class="btn game wrongAnswer"  style="background:green">Option 4</button>
             </div>
         </div>
        <!-- row -->
@@ -91,6 +92,14 @@
             </div>
         </div>
 
+			<!-- row --><!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="rightAnswer">
+                   RightAnwer
+                </div>
+            </div>
+        </div>
         <!-- end of container -->
     </div>
     <!-- Optional JavaScript -->

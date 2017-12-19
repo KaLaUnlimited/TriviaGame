@@ -2,7 +2,11 @@
 //var timer;
 var number = 5;
 var intervalId;
-var miliseconds=5000;
+var miliseconds=6000;
+var selection="";
+var right=$(".right");
+var wrong=$(".wrong");
+var wrong;
 
 $(".question1").hide();
 $(".question2").hide();
@@ -10,43 +14,75 @@ $(".question3").hide();
 $(".question4").hide();
 $("#score").hide();
 $("#wrongAnswer").hide();
+$("#rightAnswer").hide();
 
 
-
+$(".timer").html("You have : " + number + " seconds!");
 $("#start").click(function(){
 
 $("#start").hide();
 
 
-//timer function will hide first question and show answer page
-timer();
-$(".question1").show()
+
 //countdown begins to answer question #1
 
-var hide1=setTimeout(q1countDown,6000);
+timer();
+$(".question1").show()//timer function will hide first question and show answer page
+
+//retrieving users input
+$(".game").click(function(){
+				
+				selection=$(this);
+
+				if(selection===right){
+				$("#rightAnswer").show();
+					console.log("this button works!");
+				}
+			
+			})
+
+// **********countdown begins to answer question #2
+var hide1=setTimeout(q1countDown,miliseconds);
 
 function q1countDown(){
 	
 	$(".question1").hide()
 	number =6;
 	timer();
-	$(".question2").show()
-	// countdown begins to answer question #2
-	var hide2=setTimeout(q2countDown,6000);
+	$(".question2").show()//show question for 90 seconds
+//users pick answer
+
+			$(".game").click(function(){
+				console.log("this button works!");
+				selection=$(this);
+
+				if(selection===right){
+				$("#rightAnswer").show();
+
+				}
+			
+			})
+
+
+
+
+	// **********countdown begins to answer question #3
+	var hide2=setTimeout(q2countDown,miliseconds);
 		function q2countDown(){
 			 number =6;
 			timer();
 			$(".question2").hide();
 			$(".question3").show();
-			//countdown begins to answer question #3
-			var hide3=setTimeout(q3countDown,6000);
+
+			//***********countdown begins to answer question #3
+			var hide3=setTimeout(q3countDown,miliseconds);
 				function q3countDown(){
 					number =6;
 					timer();
 					$(".question3").hide();
 					$(".question4").show();
 					//countdown begins to answer question #4
-					var hide3=setTimeout(q4countDown,6000);
+					var hide3=setTimeout(q4countDown,miliseconds);
 						function q4countDown(){
 							number =6;
 							timer();
@@ -78,6 +114,7 @@ function q1countDown(){
       $(".timer").html("You have : " + number + " seconds!");
 
       if (number === 0) {
+      	$(".timer").html("Times up!");
 
         stop();
 

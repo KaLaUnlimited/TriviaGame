@@ -5,6 +5,34 @@
 	margin-top: 170px;
 }
 
+header{
+
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+     font-family: 'Rock Salt', cursive; 
+     height: 80px;
+     text-align:center;          
+     padding-top: 15px;
+}
+
+body{
+	background: url(https://images3.alphacoders.com/880/880821.png);
+	background-size: 1120px;
+	color:white;
+	
+}
+
+.Sparkle {
+	
+	font-size:100px;
+	font-family:impact;
+	
+ -webkit-text-fill-color: transparent;
+ background: -webkit-linear-gradient(transparent, transparent),
+             url(http://www.myspacehippo.com/files/glitterbacks/bg345.gif) repeat;
+ background: -o-linear-gradient(transparent, transparent);
+ -webkit-background-clip: text;
+}
 
 #score{
 background: blue;
@@ -19,6 +47,11 @@ height: 50px;
 
 background:red;
 height:20px;
+}
+
+#rightAnwer{
+	background:beige;
+	height:30px;
 }
 button{
 	width: 50%;
