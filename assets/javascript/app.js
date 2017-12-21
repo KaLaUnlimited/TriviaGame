@@ -50,6 +50,7 @@ $(".game").click(function(){
 				//$("#newZealand").show()//giphy
 				$(".question1").hide();
 				right++;
+				stop();
 				}
 				//if the user selects the wrong button
 				if  (selection.hasClass("wrongAnswer"))
@@ -57,6 +58,8 @@ $(".game").click(function(){
 					$(".question1").hide();
 					$("#wrongAnswer").show();
 					wrong++;
+				//stops the timer to go to the next question
+					stop();
 				}
 
 				 	
