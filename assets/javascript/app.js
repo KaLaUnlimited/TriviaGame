@@ -6,6 +6,7 @@ var selection=false;
 var right=$(".right");
 var wrong=$(".wrong");
 var wrong;
+var right;
 var noAnswer;
 var number2 =3;
 
@@ -23,7 +24,8 @@ $("#newZealand").hide();
 $("#start").click(function(){
 $(".timer").html("You have : " + number + " seconds!");
 
-
+right=0;
+wrong=0;
 noAnswer=0;
 $("#start").hide();
 
@@ -47,41 +49,20 @@ $(".game").click(function(){
 				$("#rightAnswer").show();
 				//$("#newZealand").show()//giphy
 				$(".question1").hide();
+				right++;
 				}
 				//if the user selects the wrong button
 				if  (selection.hasClass("wrongAnswer"))
 				{	
 					$(".question1").hide();
 					$("#wrongAnswer").show();
-				
+					wrong++;
 				}
 
 				 	
 		})
-				// if( number===0)
-
-				//  	//(selection.hasClass(false)===false)
-				// {	//	alert("if/else is working");	
-				//  	console.log("You run out of time!");
-				//  	$(".question1").hide();
-				//  	alert("this if statement works");
-				//  	setTimeout(ShowAnswer,5000);	
-				//  	//$("#rightAnswer").show();
-				// // 	stop();
-				// // }	
-				// 	}
-					//$("#rightAnswer").hide();
-
-
-
-
-
-
-
-
-
-
-
+				
+				
 
 // // **********countdown begins to answer question #2
 var hide1=setTimeout(q1countDown,miliseconds);
@@ -91,19 +72,33 @@ function q1countDown(){
 	$(".question1").hide()
 	number =6;
 	timer();
-	$(".question2").show()//show question for 90 seconds
-//users pick answer
+	$(".question2").show();//show question for 90 seconds
 
-			// $(".game").click(function(){
-			// 	console.log("this button works!");
-			// 	selection=$(this);
+$(".game").click(function(){
+				//if game button equals right answer
+				selection=$(this);
+				console.log(typeof selection);
 
-			// 	if(selection===right){
-			// 	$("#rightAnswer").show();
+				console.log(selection);
+				//show div that confirms right answer 
+				if(selection.hasClass("right")){
+				$("#rightAnswer").show();
+				//$("#newZealand").show()//giphy
+				$(".question2").hide();
+				right++;
+				stop();
+				}
+				//if the user selects the wrong button
+				if  (selection.hasClass("wrongAnswer"))
+				{	
+					$(".question2").hide();
+					$("#wrongAnswer").show();
+					wrong++;
+					stop();
+				}
 
-			// 	}
-			
-			// })
+				 	
+		})
 
 
 
@@ -130,7 +125,8 @@ function q1countDown(){
 							timer();
 							$(".question4").hide();
 							//code to display code
-								$("#score").show();
+								score();
+								//$("#score").show();
 	
 
 
@@ -167,7 +163,7 @@ function q1countDown(){
       	$("#rightAnswer").show();
       	$(".question1").hide();
       //	$(".timer").html("Times up!");
-
+      noAnswer++;
         stop();
 
       //  alert("Time Up!");
@@ -180,6 +176,12 @@ function q1countDown(){
     }
 
   /////////////////////timer for confirmation of right and wrong answer  
+
+function score(){
+
+	$("#score").show()
+	$("#score").text("Correct answers=(s): " + right + " Incorrect answer(s): "+ wrong+ " Unanswered answer(s): " + noAnswer );
+}
 
 function ShowAnswer(){
 	
