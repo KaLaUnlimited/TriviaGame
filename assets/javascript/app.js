@@ -50,7 +50,7 @@ $(".game").click(function(){
 				//$("#newZealand").show()//giphy
 				$(".question1").hide();
 				right++;
-				stop();
+				//stop();
 				}
 				//if the user selects the wrong button
 				if  (selection.hasClass("wrongAnswer"))
@@ -68,11 +68,11 @@ $(".game").click(function(){
 				
 
 // // **********countdown begins to answer question #2
-var hide1=setTimeout(q1countDown,miliseconds);
+setTimeout(q1countDown,miliseconds);
 
 function q1countDown(){
-	
-	$(".question1").hide()
+	$("#rightAnswer").hide();
+	$(".question1").hide();
 	number =6;
 	timer();
 	$(".question2").show();//show question for 90 seconds
