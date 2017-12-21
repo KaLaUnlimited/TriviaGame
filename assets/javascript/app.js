@@ -2,10 +2,12 @@ var timer;
 var number = 5;
 var intervalId;
 var miliseconds=6000;
-var selection="";
+var selection=false;
 var right=$(".right");
 var wrong=$(".wrong");
 var wrong;
+var noAnswer;
+var number2 =3;
 
 $(".question1").hide();
 $(".question2").hide();
@@ -17,9 +19,12 @@ $("#rightAnswer").hide();
 $("#newZealand").hide();
 
 
-$(".timer").html("You have : " + number + " seconds!");
+////start button to start the game
 $("#start").click(function(){
+$(".timer").html("You have : " + number + " seconds!");
 
+
+noAnswer=0;
 $("#start").hide();
 
 
@@ -30,9 +35,12 @@ timer();
 $(".question1").show()//timer function will hide first question and show answer page
 
 //when game button is clicked.....
+
 $(".game").click(function(){
 				//if game button equals right answer
 				selection=$(this);
+				console.log(typeof selection);
+
 				console.log(selection);
 				//show div that confirms right answer 
 				if(selection.hasClass("right")){
@@ -41,20 +49,41 @@ $(".game").click(function(){
 				$(".question1").hide();
 				}
 				//if the user selects the wrong button
-				 else if (selection.hasClass("wrongAnswer"))
+				if  (selection.hasClass("wrongAnswer"))
 				{	
 					$(".question1").hide();
 					$("#wrongAnswer").show();
+				
 				}
-				else{
-					console.log("You run out of time!");
-					$("#rightAnswer").show();
-					stop();
-				}	
-					
-			})
 
-// **********countdown begins to answer question #2
+				 	
+		})
+				// if( number===0)
+
+				//  	//(selection.hasClass(false)===false)
+				// {	//	alert("if/else is working");	
+				//  	console.log("You run out of time!");
+				//  	$(".question1").hide();
+				//  	alert("this if statement works");
+				//  	setTimeout(ShowAnswer,5000);	
+				//  	//$("#rightAnswer").show();
+				// // 	stop();
+				// // }	
+				// 	}
+					//$("#rightAnswer").hide();
+
+
+
+
+
+
+
+
+
+
+
+
+// // **********countdown begins to answer question #2
 var hide1=setTimeout(q1countDown,miliseconds);
 
 function q1countDown(){
@@ -115,7 +144,7 @@ function q1countDown(){
 }
 
 
-
+//////end of start button semi-colon
 });
 
 
@@ -134,7 +163,10 @@ function q1countDown(){
       $(".timer").html("You have : " + number + " seconds!");
 
       if (number === 0) {
-      	$(".timer").html("Times up!");
+      	//setTimeout(ShowAnswer,5000);
+      	$("#rightAnswer").show();
+      	$(".question1").hide();
+      //	$(".timer").html("Times up!");
 
         stop();
 
@@ -147,8 +179,33 @@ function q1countDown(){
       clearInterval(intervalId);
     }
 
-    
+  /////////////////////timer for confirmation of right and wrong answer  
 
+function ShowAnswer(){
+	
+
+	$("#rightAnswer").show();
+}
+
+
+// function timer2() {
+//       intervalId = setInterval(decrement2, 1000);
+//     }
+// function decrement2(){
+
+// number2--;
+
+//      // $(".timer").html("You have : " + number + " seconds!");
+
+//       if (number2 === 0) {
+//       	$(".timer").html("Times up!");
+
+//         stop();
+
+//       //  alert("Time Up!");
+//       }
+
+// }
 
 
 
