@@ -1,131 +1,131 @@
 
-// //var timer;
-// var number = 5;
-// var intervalId;
-// var miliseconds=6000;
-// var selection="";
-// var right=$(".right");
-// var wrong=$(".wrong");
-// var wrong;
+var timer;
+var number = 5;
+var intervalId;
+var miliseconds=6000;
+var selection="";
+var right=$(".right");
+var wrong=$(".wrong");
+var wrong;
 
-// $(".question1").hide();
-// $(".question2").hide();
-// $(".question3").hide();
-// $(".question4").hide();
-// $("#score").hide();
-// $("#wrongAnswer").hide();
-// $("#rightAnswer").hide();
-
-
-// $(".timer").html("You have : " + number + " seconds!");
-// $("#start").click(function(){
-
-// $("#start").hide();
+$(".question1").hide();
+$(".question2").hide();
+$(".question3").hide();
+$(".question4").hide();
+$("#score").hide();
+$("#wrongAnswer").hide();
+$("#rightAnswer").hide();
 
 
+$(".timer").html("You have : " + number + " seconds!");
+$("#start").click(function(){
 
-// //countdown begins to answer question #1
+$("#start").hide();
 
-// timer();
-// $(".question1").show()//timer function will hide first question and show answer page
 
-// //retrieving users input
-// $(".game").click(function(){
+
+//countdown begins to answer question #1
+
+timer();
+$(".question1").show()//timer function will hide first question and show answer page
+
+//retrieving users input
+$(".game").click(function(){
 				
-// 				selection=$(this);
-// console.log(selection);
-// 				if(selection.hasClass("right")){
-// 				$("#rightAnswer").show();
-// 				$(".question1").hide()
-// 				}
+				selection=$(this);
+console.log(selection);
+				if(selection.hasClass("right")){
+				$("#rightAnswer").show();
+				$(".question1").hide()
+				}
 			
-// 			})
+			})
 
-// // **********countdown begins to answer question #2
-// var hide1=setTimeout(q1countDown,miliseconds);
+// **********countdown begins to answer question #2
+var hide1=setTimeout(q1countDown,miliseconds);
 
-// function q1countDown(){
+function q1countDown(){
 	
-// 	$(".question1").hide()
-// 	number =6;
-// 	timer();
-// 	$(".question2").show()//show question for 90 seconds
-// //users pick answer
+	$(".question1").hide()
+	number =6;
+	timer();
+	$(".question2").show()//show question for 90 seconds
+//users pick answer
 
-// 			$(".game").click(function(){
-// 				console.log("this button works!");
-// 				selection=$(this);
+			$(".game").click(function(){
+				console.log("this button works!");
+				selection=$(this);
 
-// 				if(selection===right){
-// 				$("#rightAnswer").show();
+				if(selection===right){
+				$("#rightAnswer").show();
 
-// 				}
+				}
 			
-// 			})
+			})
 
 
 
 
-// 	// **********countdown begins to answer question #3
-// 	var hide2=setTimeout(q2countDown,miliseconds);
-// 		function q2countDown(){
-// 			 number =6;
-// 			timer();
-// 			$(".question2").hide();
-// 			$(".question3").show();
+	// **********countdown begins to answer question #3
+	var hide2=setTimeout(q2countDown,miliseconds);
+		function q2countDown(){
+			 number =6;
+			timer();
+			$(".question2").hide();
+			$(".question3").show();
 
-// 			//***********countdown begins to answer question #3
-// 			var hide3=setTimeout(q3countDown,miliseconds);
-// 				function q3countDown(){
-// 					number =6;
-// 					timer();
-// 					$(".question3").hide();
-// 					$(".question4").show();
-// 					//countdown begins to answer question #4
-// 					var hide3=setTimeout(q4countDown,miliseconds);
-// 						function q4countDown(){
-// 							number =6;
-// 							timer();
-// 							$(".question4").hide();
-// 							//code to display code
-// 								$("#score").show();
+			//***********countdown begins to answer question #3
+			var hide3=setTimeout(q3countDown,miliseconds);
+				function q3countDown(){
+					number =6;
+					timer();
+					$(".question3").hide();
+					$(".question4").show();
+					//countdown begins to answer question #4
+					var hide3=setTimeout(q4countDown,miliseconds);
+						function q4countDown(){
+							number =6;
+							timer();
+							$(".question4").hide();
+							//code to display code
+								$("#score").show();
 	
 
 
 
-// }
+}
 
-// }
+}
 
-// }	
+}	
 
-// }
+}
 
 
-// //this is the timer function
-//   function timer() {
-//       intervalId = setInterval(decrement, 1000);
-//     }
+//this is the timer function
+  function timer() {
+      intervalId = setInterval(decrement, 1000);
+    }
 
-//     function decrement() {
+    function decrement() {
     
-//       number--;
+      number--;
 
-//       $(".timer").html("You have : " + number + " seconds!");
+      $(".timer").html("You have : " + number + " seconds!");
 
-//       if (number === 0) {
-//       	$(".timer").html("Times up!");
+      if (number === 0) {
+      	$(".timer").html("Times up!");
 
-//         stop();
+        stop();
 
-//       //  alert("Time Up!");
-//       }
-//     }
+      //  alert("Time Up!");
+      }
+    }
 
-//     function stop() {
+    function stop() {
 
-//       clearInterval(intervalId);
-//     }
+      clearInterval(intervalId);
+    }
 
     
 
@@ -469,4 +469,4 @@ $.fn.imagesLoaded = function(callback){
 
 
 ///////////////////////////////end document ready/////////////////////////////
-// })
+})
