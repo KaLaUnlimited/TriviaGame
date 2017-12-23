@@ -33,8 +33,8 @@ $("#start").hide();
 
 //countdown begins to answer question #1
 
-timer();
-$(".question1").show()//timer function will hide first question and show answer page
+timer();//timer function will hide first question and show answer page
+$(".question1").show()//Question #1 show
 
 //when game button is clicked.....
 
@@ -75,8 +75,8 @@ function q1countDown(){
 	$(".question1").hide();
 	number =6;
 	timer();
-	$(".question2").show();//show question for 90 seconds
-
+	$(".question2").show();//show question #2 for 90 seconds
+//if use click any option
 $(".game").click(function(){
 				//if game button equals right answer
 				selection=$(this);
@@ -101,40 +101,96 @@ $(".game").click(function(){
 				}
 
 				 	
-		})
+		})///
 
 
+	if(number===0){
+		setTimeout(ShowAnswer,3000);}
 
 
 	// **********countdown begins to answer question #3
-	var hide2=setTimeout(q2countDown,miliseconds);
+	setTimeout(q2countDown,miliseconds);//starts timer for #3
 		function q2countDown(){
+			$("#rightAnswer").hide();
+			$(".question2").hide();
 			 number =6;
 			timer();
-			$(".question2").hide();
-			$(".question3").show();
+			
+			$(".question3").show();//show question #3
 
-			//***********countdown begins to answer question #3
-			var hide3=setTimeout(q3countDown,miliseconds);
+			$(".game").click(function(){
+				//if game button equals right answer
+				selection=$(this);
+				console.log(typeof selection);
+
+				console.log(selection);
+				//show div that confirms right answer 
+				if(selection.hasClass("right")){
+				$("#rightAnswer").show();
+				//$("#newZealand").show()//giphy
+				$(".question3").hide();
+				right++;
+				stop();
+				}
+				//if the user selects the wrong button
+				if  (selection.hasClass("wrongAnswer"))
+				{	
+					$(".question3").hide();
+					$("#wrongAnswer").show();
+					wrong++;
+					stop();
+				}
+
+				 	
+		})
+			timer();
+
+			//***********countdown begins to answer question #4
+			setTimeout(q3countDown,miliseconds);
 				function q3countDown(){
 					number =6;
 					timer();
 					$(".question3").hide();
 					$(".question4").show();
-					//countdown begins to answer question #4
-					var hide3=setTimeout(q4countDown,miliseconds);
-						function q4countDown(){
-							number =6;
-							timer();
-							$(".question4").hide();
-							//code to display code
-								score();
-								//$("#score").show();
+
+					$(".game").click(function(){
+				//if game button equals right answer
+				selection=$(this);
+				console.log(typeof selection);
+
+				console.log(selection);
+				//show div that confirms right answer 
+				if(selection.hasClass("right")){
+				$("#rightAnswer").show();
+				//$("#newZealand").show()//giphy
+				$(".question4").hide();
+				right++;
+				stop();
+				}
+				//if the user selects the wrong button
+				if  (selection.hasClass("wrongAnswer"))
+				{	
+					$(".question4").hide();
+					$("#wrongAnswer").show();
+					wrong++;
+					stop();
+				}
+			});
+
+					//countdown begins to answer question #5
+// 					var hide3=setTimeout(q4countDown,miliseconds);
+// 						function q4countDown(){
+// 							number =6;
+// 							timer();
+// 							$(".question4").hide();
+// 							//code to display code
+// 								score();
+// 								//$("#score").show();
 	
 
 
 
-}
+// }
 
 }
 
@@ -192,6 +248,13 @@ function ShowAnswer(){
 	$("#rightAnswer").show();
 }
 
+
+
+
+function nextQuestion(){
+
+	$("#rightAnswer").show();
+}
 
 // function timer2() {
 //       intervalId = setInterval(decrement2, 1000);
