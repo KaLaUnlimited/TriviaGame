@@ -36,7 +36,7 @@ $("#start").hide();
 
 
 //countdown begins to answer question #1
-for(var i=0; i<1; i++){// this loop is to loop through each round (side note when middle condition is i<=0, timer decrement by two seconds..strange)	
+for(var i=0; i<2; i++){// this loop is to loop through each round (side note when middle condition is i<=0, timer decrement by two seconds..strange)	
 timer();//timer function will hide first question and show answer page
 $(".questions").val(i).show()//Question #1 show
 
