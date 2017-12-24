@@ -1,5 +1,5 @@
 var timer;
-var number = 10;
+var number = 3;
 var intervalId;
 var miliseconds=6000;
 var selection=false;
@@ -11,6 +11,8 @@ var noAnswer;
 var number2 =3;
 var currentQuestion;
 var strCurrentQuestion;
+var numOfQuestions=2;
+var i;
 
 // $(".question1").hide();
 // $(".question2").hide();
@@ -36,9 +38,9 @@ $("#start").hide();
 
 
 //countdown begins to answer question #1
-for(var i=0; i<2; i++){// this loop is to loop through each round (side note when middle condition is i<=0, timer decrement by two seconds..strange)	
+for(i=1; i<2; i++){// this loop is to loop through each round (side note when middle condition is i<=0, timer decrement by two seconds..strange)	
 timer();//timer function will hide first question and show answer page
-$(".questions").val(i).show()//Question #1 show
+$(".questions").val(i).show();//Question #1 show
 
 //when game button is clicked.....
 
@@ -50,15 +52,20 @@ $(".game").click(function(){
 				console.log(selection);
 				//show div that confirms right answer 
 				if(selection.hasClass("right")){
+
+				$(".rightAnswer").before("You are correct!");
 				$(".rightAnswer").val(i).show();
 				//$("#newZealand").show()//giphy
 				$(".questions").val(i).hide();
 				right++;
 				stop();
+//$(".timer").prepend("You have : " + number + " seconds!");
+
 				}
 				//if the user selects the wrong button
 				if  (selection.hasClass("wrong"))
 				{	
+					$(".wrongAnswer").before("Correct Answer!");
 					$(".questions").val(i).hide();
 					$(".wrongAnswer").val(i).show();
 					//$(".wrongAnswer").prepend("Incorrect");
@@ -70,9 +77,15 @@ $(".game").click(function(){
 
 				 	
 		})
+
+if(i===numOfQuestions){
+	$("#score").html("Right: " + right + " Wrong: " + wrong + "Unanswered: " + noAnswer)
+}
 				
 				
 }
+
+
 // // **********countdown begins to answer question #2
 // setTimeout(q2countDown,miliseconds);
 
@@ -210,9 +223,9 @@ $(".game").click(function(){
 
 
 //////end of start button semi-colon
+
+
 });
-
-
 
 
 
@@ -230,8 +243,9 @@ $(".game").click(function(){
       if (number === 0) {
       	//setTimeout(ShowAnswer,5000);
       	//currentQuestion
+      	$(".wrongAnswer").val(i).show();
+      	$(".wrongAnswer").before("Correct Answer:");
       	
-      	$(".rightAnswer").val(i).show();
       	$(".questions").val(i).hide();
       //	$(".timer").html("Times up!");
       currentQuestion++;//increment to next question
@@ -255,39 +269,9 @@ function score(){
 	$("#score").text("Correct answers=(s): " + right + " Incorrect answer(s): "+ wrong+ " Unanswered answer(s): " + noAnswer );
 }
 
-function ShowAnswer (question){
-	
-	question= $(".questions");
-	$("#rightAnswer").show();
-	$(this).hide();
-}
 
 
 
-
-function nextQuestion(){
-
-	$("#rightAnswer").show();
-}
-
-// function timer2() {
-//       intervalId = setInterval(decrement2, 1000);
-//     }
-// function decrement2(){
-
-// number2--;
-
-//      // $(".timer").html("You have : " + number + " seconds!");
-
-//       if (number2 === 0) {
-//       	$(".timer").html("Times up!");
-
-//         stop();
-
-//       //  alert("Time Up!");
-//       }
-
-// }
 
 
 
