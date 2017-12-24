@@ -16,7 +16,7 @@ var currentQuestion;
 // $(".question3").hide();
 // $(".question4").hide();
  $("#score").hide();
- $(".wrongAnswer").hide();
+$(".wrongAnswer").hide();
  $(".rightAnswer").hide();
  $("#newZealand").hide();
  $(".questions").hide();
@@ -25,7 +25,7 @@ var currentQuestion;
 ////start button to start the game
 $("#start").click(function(){
 $(".timer").html("You have : " + number + " seconds!");
-currentQuestion=0;
+currentQuestion=1;
 right=0;
 wrong=0;
 noAnswer=0;
@@ -47,7 +47,7 @@ $(".game").click(function(){
 
 				console.log(selection);
 				//show div that confirms right answer 
-				if(selection.hasClass("correct")){
+				if(selection.hasClass("right")){
 				$(".rightAnswer").val('1').show();
 				//$("#newZealand").show()//giphy
 				$(".questions").val('1').hide();
@@ -55,10 +55,12 @@ $(".game").click(function(){
 				//stop();
 				}
 				//if the user selects the wrong button
-				if  (selection.hasClass("wrongAnswer"))
+				if  (selection.hasClass("wrong"))
 				{	
 					$(".questions").val('1').hide();
-					$("#wrongAnswer").show();
+					$(".wrongAnswer").val('1').show();
+					//$(".wrongAnswer").prepend("Incorrect");
+					//$(".wrongAnswer")
 					wrong++;
 				//stops the timer to go to the next question
 					stop();
@@ -225,11 +227,13 @@ $(".game").click(function(){
 
       if (number === 0) {
       	//setTimeout(ShowAnswer,5000);
-
-      	$("#rightAnswer").show();
-      	$(".question1").hide();
+      	currentQuestion
+      	strCurrentQuestion=String(currentQuestion);
+      	$(".rightAnswer").val(strCurrentQuestion).show();
+      	$(".questions").val(strCurrentQuestion).hide();
       //	$(".timer").html("Times up!");
-      noAnswer++;
+      currentQuestion++;//increment to next question
+           noAnswer++;// add to unanswered score
         stop();
 
       //  alert("Time Up!");
